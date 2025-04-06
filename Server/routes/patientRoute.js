@@ -8,4 +8,6 @@ router.post("/register",registerPatient);
 router.post("/login",loginPatient);
 router.post("/logout",logoutPatient);
 router.post("/addapointment",addAppointment);
-router.get("/:patientId",patientDetails)
+router.get("/:patientId",patientDetails);
+
+export default router;
