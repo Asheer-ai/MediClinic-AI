@@ -1,5 +1,6 @@
 import express from "express"
 import { adminLogin, allPatients } from "../controllers/adminController.js";
+import { addMedicalTest, deleteMedicalTest, getAllMedicalTest } from "../controllers/medicalTestController.js";
 
 
 const router=express.Router();
