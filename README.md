@@ -6,6 +6,36 @@ It manages **Patients**, **Doctors**, **Admins**, **Appointments**, **Prescripti
 ---
 
 ## 📂 Project Structure
+Hospital-Mangement-System/
+├─ Client/
+└─ Server/
+   ├─ config/
+   │  └─ db.js
+   ├─ controllers/
+   │  ├─ adminController.js
+   │  ├─ appointmentController.js
+   │  ├─ doctorController.js
+   │  ├─ medicalTestController.js
+   │  ├─ patientController.js
+   │  └─ prescriptionController.js
+   ├─ middlewares/
+   │  ├─ adminAuth.js
+   │  └─ authMiddleware.js
+   ├─ models/
+   │  ├─ appointmentModel.js
+   │  ├─ doctorModel.js
+   │  ├─ medicalTestModel.js
+   │  ├─ patientModel.js
+   │  └─ prescription.js
+   ├─ routes/
+   │  ├─ adminRoute.js
+   │  ├─ DoctorRoute.js
+   │  └─ patientRoute.js
+   ├─ .env
+   ├─ .gitignore
+   ├─ index.js
+   ├─ package-lock.json
+   └─ package.json
 
 
 ---
