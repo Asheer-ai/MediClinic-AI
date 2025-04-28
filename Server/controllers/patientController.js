@@ -10,7 +10,7 @@ const generateToken=(id)=>{
 
 export const registerPatient = async(req,res,next) => {
     const { name,email,password,address,phone,dateofBirth }=req.body;
-    const patientExists= await Patient.findone({email});
+    const patientExists= await Patient.findOne({email});
 
     if(patientExists){
         return res.status(400).json({message:'Patient already exists'});
@@ -42,7 +42,7 @@ export const registerPatient = async(req,res,next) => {
 
 export const loginPatient=async(req,res)=>{
     const {email,password}=req.body;
-    const patient= await Patient.findone({email});
+    const patient= await Patient.findOne({email});
 
     if(patient && (await bcrypt.compare(password,patient.password))){
         res.json({
@@ -66,7 +66,7 @@ export const logoutPatient = async (req, res) => {
     
 };
 
-export const patientDetails=async()=>{
+export const patientDetails=async(req,res)=>{
     const {patientId}=req.params;
 
     try {

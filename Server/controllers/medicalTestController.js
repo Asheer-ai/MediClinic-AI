@@ -21,7 +21,7 @@ export const addMedicalTest = async(req,res)=>{
     }
 };
 
-export const getAllMedicalTest=async () => {
+export const getAllMedicalTest=async (req,res) => {
     try {
         const medicalTests = await MedicalTest.find();
         res.status(200).json(medicalTests);

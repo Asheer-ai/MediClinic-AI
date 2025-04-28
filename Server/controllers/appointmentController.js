@@ -7,7 +7,7 @@ export const addAppointment=async (req,res) =>{
 
     try {
         const doctor=await Doctor.findById(doctorObjectId);
-        const user=await Patient.findById(userObjectIdObjectId);
+        const user=await Patient.findById(userObjectId);
 
         if(!doctor||!user){
             return res.status(404).json({message:'Doctor or User not found'});

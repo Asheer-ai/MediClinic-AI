@@ -43,7 +43,7 @@ export const getDoctor= async (req,res)=>{
     }
 }
 
-export const doctorLogin= async ()=>{
+export const doctorLogin= async (req,res)=>{
     const {email,code}=req.body;
     try {
         const doctor=await Doctor.findOne({email});

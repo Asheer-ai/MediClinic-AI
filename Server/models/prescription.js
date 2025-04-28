@@ -11,8 +11,8 @@ const prescriptionSchema=new mongoose.Schema({
     
     date:
     {
-        type:date,
-        default:date.now,
+        type:Date,
+        default:Date.now,
     },
     patientDetails:{
         name:{
