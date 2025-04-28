@@ -145,21 +145,27 @@ Hospital-Management-System/
 | GET    | `/prescriptions/:userId/:doctorId` | Get prescriptions by user and doctor |
 | GET    | `/prescriptions/:userId`   | Get prescriptions by user      |
 
----
 
-## 🛑 Known Issues / Future Improvements
-
-- Doctor Login should use dynamic credentials.
-- Add proper authentication middleware for protected routes.
-- Add error handling middleware.
-- Improve environment security using `.env` for secrets like `JWT_SECRET`.
-- Implement email validation for case insensitivity.
-- Fix typos: e.g., `findone` → `findOne`.
-
----
 
 ## 🚀 How to Run Locally
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/clinic-management-backend.git
+
+2. Install dependencies:
+ ```bash
+   npm install
+```
+
+3. Set up your .env file:
+ ```bash
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret_key
+PORT=5000
+```
+
+4. Start the server:
+```bash
+npm run dev
+
