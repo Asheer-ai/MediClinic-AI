@@ -20,7 +20,7 @@ export const adminLogin = async (req,res) => {
         return res.status(200).json({message:'Admin Login successful'});
     }
 
-    return res.status(401).json({message:'Invalid admin credentials'});
+    return res.status(401).json({message:'Invalid admin credentials'}); 
 }
 
 export const allPatients = async (req,res) => {
