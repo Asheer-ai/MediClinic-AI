@@ -1,12 +1,15 @@
-
-
 import './App.css'
 
+
+
 function App() {
-  
 
   return (
-   <div>Hello hii</div>
+    <>
+      <h1 className="font-kameron text-3xl">Welcome to MediClinic AI</h1>
+      
+    </>
+    
   )
 }
 
