@@ -4,8 +4,13 @@ import './index.css'
 import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import LandingPage from './pages/LandingPage'
+import SignUpPage from './pages/SignUpPage'
 
 const router=createBrowserRouter([
+  {
+    path: '/auth/signup',
+    element: <SignUpPage />,
+  },
   {
     path:'/',
     element:<LandingPage/>
