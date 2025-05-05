@@ -2,6 +2,9 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import connectionToDB from './config/db.js';
+import patientRoutes from './routes/patientRoute.js';
+import adminRoutes from './routes/adminRoute.js';
+import doctorRoutes from './routes/DoctorRoute.js'
 
 dotenv.config()
 
@@ -20,6 +23,10 @@ app.use(
 app.get('/ping', (_req, res) => {
     res.send('Pong');
 });
+
+app.use('/api/patients',patientRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/doctors', doctorRoutes);
 
 const PORT=process.env.PORT || 5000;
 app.listen(PORT, () => {

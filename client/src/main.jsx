@@ -5,11 +5,21 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import LandingPage from './pages/LandingPage'
 import SignUpPage from './pages/SignUpPage'
+import SignInPage from './pages/SignInPage'
+import AdminLogin from './pages/Admin/AdminLogin'
 
 const router=createBrowserRouter([
   {
+    path: '/auth/signin',
+    element: <SignInPage />,
+  },
+  {
     path: '/auth/signup',
     element: <SignUpPage />,
+  },
+  {
+    path: '/admin/login',
+    element: <AdminLogin />, 
   },
   {
     path:'/',
