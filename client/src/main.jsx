@@ -7,8 +7,15 @@ import LandingPage from './pages/LandingPage'
 import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SignInPage'
 import AdminLogin from './pages/Admin/AdminLogin'
+import Admin from './Admin'
 
 const router=createBrowserRouter([
+  {
+    element:<Admin/>,
+    children:[
+      
+    ]
+  },
   {
     path: '/auth/signin',
     element: <SignInPage />,
