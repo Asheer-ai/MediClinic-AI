@@ -1,3 +1,5 @@
+import PatientFilters from '@/components/customs/PatientFilters';
+import PatientsList from '@/components/customs/PatientsList';
 import React, { useEffect, useState } from 'react'
 
 function PatientsPage() {
@@ -30,14 +32,14 @@ function PatientsPage() {
   return (
     <div className='w-full px-3 h-full'>
         <div className='w-full flex flex-col items-center py-5'>
-        <h1 className='text-4xl font-kameron font-semibold text-[#1B4965]'>Patients List</h1><h1 className='text-4xl font-kameron font-semibold text-[#1B4965]'>Patients List</h1>
+        <h1 className='text-4xl font-kameron font-semibold text-[#1B4965]'>Patients List</h1>
         </div>
         <div className='w-full flex justify-between h-[30rem]'>
         <div className='w-[74%] h-full rounded-lg overflow-y-scroll bg-white'>
-
+            <PatientsList filters={filters} patients={patients}/>
         </div>
         <div className='w-[24%] h-full rounded-lg overflow-y-scroll bg-white'>
-            
+        <PatientFilters setFilters={setFilters} />    
         </div>
         </div>
     </div>

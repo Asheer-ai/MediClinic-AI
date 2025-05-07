@@ -45,7 +45,7 @@ export const MedicalTestProvider = ({ children }) => {
     },[]);
 
     return(
-        <MedicalTestContext.Provider values={{ tests,addTest,removeTest}}>
+        <MedicalTestContext.Provider value={{ tests,addTest,removeTest}}>
             {children}
         </MedicalTestContext.Provider>
     )

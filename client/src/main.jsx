@@ -8,12 +8,21 @@ import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SignInPage'
 import AdminLogin from './pages/Admin/AdminLogin'
 import Admin from './Admin'
+import PatientsPage from './pages/Admin/PatientsPage'
+import AdminDashboard from './pages/Admin/AdminDashboard'
 
 const router=createBrowserRouter([
   {
     element:<Admin/>,
     children:[
-      
+      {
+        path: '/admin/dashboard',
+        element: <AdminDashboard />
+      },
+      {
+        path: '/admin/patients',
+        element: <PatientsPage />
+      }
     ]
   },
   {
@@ -36,7 +45,6 @@ const router=createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-
     <RouterProvider router={router}/>
   </StrictMode>,
 )
