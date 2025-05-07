@@ -10,11 +10,17 @@ import AdminLogin from './pages/Admin/AdminLogin'
 import Admin from './Admin'
 import PatientsPage from './pages/Admin/PatientsPage'
 import AdminDashboard from './pages/Admin/AdminDashboard'
+import AddDoctors from './pages/Admin/AddDoctors'
+import AddMedicalTest from './pages/Admin/AddMedicalTest'
 
 const router=createBrowserRouter([
   {
     element:<Admin/>,
     children:[
+      {
+        path: '/admin/add-doctor',
+        element: <AddDoctors />
+      },
       {
         path: '/admin/dashboard',
         element: <AdminDashboard />
@@ -22,6 +28,10 @@ const router=createBrowserRouter([
       {
         path: '/admin/patients',
         element: <PatientsPage />
+      },
+      {
+        path: '/admin/add-test',
+        element: <AddMedicalTest />
       }
     ]
   },
