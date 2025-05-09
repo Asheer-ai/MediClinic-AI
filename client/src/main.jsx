@@ -12,8 +12,20 @@ import PatientsPage from './pages/Admin/PatientsPage'
 import AdminDashboard from './pages/Admin/AdminDashboard'
 import AddDoctors from './pages/Admin/AddDoctors'
 import AddMedicalTest from './pages/Admin/AddMedicalTest'
+import ProtectedRoute from './components/customs/smallComponents/ProtectedRoute'
+import AppointmentPage from './pages/AppointmentPage'
 
 const router=createBrowserRouter([
+  {
+    element: <ProtectedRoute><App/></ProtectedRoute>,
+    children:[
+      {
+        path: '/home',
+        element: <AppointmentPage />
+      }
+    ]
+
+  },
   {
     element:<Admin/>,
     children:[
