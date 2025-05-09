@@ -1,5 +1,4 @@
 import DoctorCards from '@/components/customs/DoctorCards'
-import DoctorCard from '@/components/customs/smallComponents/DoctorCard'
 import React from 'react'
 
 function AppointmentPage() {
