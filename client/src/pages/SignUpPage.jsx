@@ -31,7 +31,7 @@ function SignUpPage() {
     }
   return (
     <div className="min-h-screen flex items-center justify-center" style={{
-      background: `linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%)`}}>
+      background: `linear-gradient(90deg, #b2e6c2 0%, #a9c3f5 100%)`}}>
       <div className="bg-white p-5 rounded-lg shadow-lg w-full max-w-lg">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Create Account</h2>
         <form onSubmit={handleSubmit} className="space-y-6">

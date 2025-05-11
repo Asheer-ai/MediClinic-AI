@@ -9,7 +9,7 @@ function LandingPage() {
     return (
     <>
     <div  className='w-full min-h-screen px-20 ' style={{
-        background: `linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%)`
+        background: `linear-gradient(90deg, #b2e6c2 0%, #a9c3f5 100%)`
     }}>
         <HeroSection/>
         <ServiceSection/>

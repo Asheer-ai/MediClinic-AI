@@ -21,8 +21,8 @@ function DoctorCards() {
       return doctorsData; // Use the doctors from context
     }
     
-    return doctorsData.filter(doctor => doctorsData.speciality
-        === selectedSpecialty);
+    return doctorsData.filter(doctor => doctor.speciality === selectedSpecialty);
+
     };
 
   return (

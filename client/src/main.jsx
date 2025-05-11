@@ -14,6 +14,9 @@ import AddDoctors from './pages/Admin/AddDoctors'
 import AddMedicalTest from './pages/Admin/AddMedicalTest'
 import ProtectedRoute from './components/customs/smallComponents/ProtectedRoute'
 import AppointmentPage from './pages/AppointmentPage'
+import DashboardPage from './pages/DashboardPage'
+import Prescription from './pages/Prescription'
+import MedicalTestPage from './pages/MedicalTestPage'
 
 const router=createBrowserRouter([
   {
@@ -22,7 +25,19 @@ const router=createBrowserRouter([
       {
         path: '/home',
         element: <AppointmentPage />
-      }
+      },
+      {
+        path: '/dashboard',
+        element: <DashboardPage />
+      },
+      {
+        path: '/prescriptions',
+        element: <Prescription />
+      },
+      {
+        path: '/medical-tests',
+        element: <MedicalTestPage />
+      },
     ]
 
   },

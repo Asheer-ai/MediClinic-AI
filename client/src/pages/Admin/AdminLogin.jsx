@@ -42,7 +42,7 @@ function AdminLogin() {
         setError('');
     }
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen " style={{background: `linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%)`}}>
+    <div className="flex flex-col items-center justify-center min-h-screen " style={{background: `linear-gradient(90deg, #b2e6c2 0%, #a9c3f5 100%)`}}>
         <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
         {isDoctorLogin ? 'Doctor Login' : 'Admin Login'}
