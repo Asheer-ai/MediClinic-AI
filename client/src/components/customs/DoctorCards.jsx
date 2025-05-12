@@ -1,27 +1,29 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Btn from './smallComponents/Btn';
 import { Link } from 'react-router-dom';
+import { DoctorContext } from '@/context/DoctorContext';
 
-const doctorsData = [
-  { id: 1, name: "Dr. John Smith", speciality: "Cardiologist", image: "/face.png" },
-  { id: 2, name: "Dr. Emma Johnson", speciality: "Gynecologist", image: "/face.png" },
-  { id: 3, name: "Dr. James Lee", speciality: "Dermatologist", image: "/face.png" },
-  { id: 4, name: "Dr. Emily Davis", speciality: "Cardiologist", image: "/face.png" },
-  { id: 5, name: "Dr. Michael Brown", speciality: "Orthopedist", image: "/face.png" },
-  { id: 6, name: "Dr. Sarah Miller", speciality: "Gynecologist", image: "/face.png" },
-];
+// const doctorsData = [
+//   { id: 1, name: "Dr. John Smith", speciality: "Cardiologist", image: "/face.png" },
+//   { id: 2, name: "Dr. Emma Johnson", speciality: "Gynecologist", image: "/face.png" },
+//   { id: 3, name: "Dr. James Lee", speciality: "Dermatologist", image: "/face.png" },
+//   { id: 4, name: "Dr. Emily Davis", speciality: "Cardiologist", image: "/face.png" },
+//   { id: 5, name: "Dr. Michael Brown", speciality: "Orthopedist", image: "/face.png" },
+//   { id: 6, name: "Dr. Sarah Miller", speciality: "Gynecologist", image: "/face.png" },
+// ];
 
 const specialties = ["All", "Cardiologist", "Gynecologist", "Dermatologist", "Orthopedist"];
 
 function DoctorCards() {
+  const { doctors } = useContext(DoctorContext);
     const [selectedSpecialty, setSelectedSpecialty] = useState("All");
 
     const filterDoctors = () => {
     if (selectedSpecialty === "All") {
-      return doctorsData; // Use the doctors from context
+      return doctors; // Use the doctors from context
     }
     
-    return doctorsData.filter(doctor => doctor.speciality === selectedSpecialty);
+    return doctors.filter(doctor => doctor.speciality === selectedSpecialty);
 
     };
 

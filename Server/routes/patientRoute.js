@@ -7,7 +7,7 @@ const router=express.Router()
 router.post("/register",registerPatient);
 router.post("/login",loginPatient);
 router.post("/logout",logoutPatient);
-router.post("/addapointment",addAppointment);
+router.post("/addappointment", addAppointment);
 router.get("/:patientId",patientDetails);
 
 export default router;

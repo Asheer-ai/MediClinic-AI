@@ -1,40 +1,44 @@
 import AddDoctorForm from '@/components/customs/AddDoctorForm';
 import DoctorsList from '@/components/customs/DoctorsList';
-import React, { useState } from 'react'
+import { DoctorContext } from '@/context/DoctorContext';
+import React, { useContext, useState } from 'react'
 
 function AddDoctors() {
-    const [doctors, setDoctors] = useState([
-        {
-            image: '/Male-doctor.jpg',
-            name: 'Dr. John Smith',
-            speciality: 'Cardiologist',
-            description: 'Expert in heart diseases and treatments',
-            experience: 10,
-            fees: 500,
-            dates: ['Monday', 'Wednesday', 'Friday'],
-            timeSlots: ['9:00 AM - 11:00 AM', '2:00 PM - 4:00 PM']
-        },
-        {
-            image: '/Female-doctor.jpg',
-            name: 'Dr. Jane Doe',
-            speciality: 'Dermatologist',
-            description: 'Specialist in skin conditions and treatments',
-            experience: 8,
-            fees: 400,
-            dates: ['Tuesday', 'Thursday'],
-            timeSlots: ['10:00 AM - 12:00 PM', '1:00 PM - 3:00 PM']
-        },
-        {
-            image: '/Female-doctor.jpg',
-            name: 'Dr. Emily Brown',
-            speciality: 'Pediatrician',
-            description: 'Provides medical care for children',
-            experience: 12,
-            fees: 450,
-            dates: ['Monday', 'Wednesday', 'Saturday'],
-            timeSlots: ['9:00 AM - 11:00 AM', '3:00 PM - 5:00 PM']
-        }
-    ]);
+    // const [doctors, setDoctors] = useState([
+    //     {
+    //         image: '/Male-doctor.jpg',
+    //         name: 'Dr. John Smith',
+    //         email: 'johnsmith@gmail.com'
+    //         speciality: 'Cardiologist',
+    //         description: 'Expert in heart diseases and treatments',
+    //         experience: 10,
+    //         fees: 500,
+    //         dates: ['Monday', 'Wednesday', 'Friday'],
+    //         timeSlots: ['9:00 AM - 11:00 AM', '2:00 PM - 4:00 PM']
+    //     },
+    //     {
+    //         image: '/Female-doctor.jpg',
+    //         name: 'Dr. Jane Doe',
+    //         speciality: 'Dermatologist',
+    //         description: 'Specialist in skin conditions and treatments',
+    //         experience: 8,
+    //         fees: 400,
+    //         dates: ['Tuesday', 'Thursday'],
+    //         timeSlots: ['10:00 AM - 12:00 PM', '1:00 PM - 3:00 PM']
+    //     },
+    //     {
+    //         image: '/Female-doctor.jpg',
+    //         name: 'Dr. Emily Brown',
+    //         speciality: 'Pediatrician',
+    //         description: 'Provides medical care for children',
+    //         experience: 12,
+    //         fees: 450,
+    //         dates: ['Monday', 'Wednesday', 'Saturday'],
+    //         timeSlots: ['9:00 AM - 11:00 AM', '3:00 PM - 5:00 PM']
+    //     }
+    // ]);
+
+    const { doctors } = useContext(DoctorContext);
 
     return (
         <div className='w-full px-3 h-full'>

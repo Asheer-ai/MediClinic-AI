@@ -17,6 +17,9 @@ import AppointmentPage from './pages/AppointmentPage'
 import DashboardPage from './pages/DashboardPage'
 import Prescription from './pages/Prescription'
 import MedicalTestPage from './pages/MedicalTestPage'
+import Doctor from './Doctor'
+import PatientsPageDoctor from './pages/Admin/PatientsPageDoctor'
+import AppointmentDetails from './pages/AppointmentDetails'
 
 const router=createBrowserRouter([
   {
@@ -25,6 +28,10 @@ const router=createBrowserRouter([
       {
         path: '/home',
         element: <AppointmentPage />
+      },
+      {
+        path: '/appointment/:id',
+        element: <AppointmentDetails />
       },
       {
         path: '/dashboard',
@@ -59,6 +66,16 @@ const router=createBrowserRouter([
       {
         path: '/admin/add-test',
         element: <AddMedicalTest />
+      }
+    ]
+  },{
+    element: <Doctor />,
+    children:[
+      {
+        path: '/doctor/patients',
+        element: <PatientsPageDoctor />
+      },{
+        
       }
     ]
   },

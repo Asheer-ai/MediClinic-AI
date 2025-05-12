@@ -1,5 +1,6 @@
 import PatientFilters from '@/components/customs/PatientFilters';
 import PatientsList from '@/components/customs/PatientsList';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
 function PatientsPage() {
@@ -11,6 +12,7 @@ function PatientsPage() {
             try {
                 const response = await fetch('http://localhost:5014/api/admin/allpatients')
                 const data=await response.json();
+                console.log("patient data ",data)
 
                 // Transform the data to fit the expected structure
                 const formattedPatients = data.map((appointment) => ({
@@ -20,6 +22,7 @@ function PatientsPage() {
                     doctor: appointment.doctor ? appointment.doctor.name : 'Unknown Doctor', // Check if doctor exists
                     time: appointment.timeSlot,
                 }));
+                console.log("Formatted patients:", formattedPatients);
                 setPatients(formattedPatients);
 
             } catch (error) {
@@ -29,7 +32,7 @@ function PatientsPage() {
 
         fetchPatients();
     },[])
-  return (
+    return (
     <div className='w-full px-3 h-full'>
         <div className='w-full flex flex-col items-center py-5'>
         <h1 className='text-4xl font-kameron font-semibold text-[#1B4965]'>Patients List</h1>
@@ -43,7 +46,7 @@ function PatientsPage() {
         </div>
         </div>
     </div>
-  )
+    )
 }
 
 export default PatientsPage
