@@ -5,9 +5,10 @@ const router=express.Router();
 
 router.post('/add-doctor', addDoctor);
 router.get('/all-doctors', getAllDoctors);
+router.post('/login', doctorLogin);
 router.delete('/delete/:id', deleteDoctor);
 router.get('/:id', getDoctor);
-router.post('/login', doctorLogin);
+
 
 export default router;
 

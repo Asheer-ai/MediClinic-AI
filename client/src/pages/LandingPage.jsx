@@ -4,6 +4,7 @@ import FooterSection from '@/components/customs/sections/FooterSection'
 import HeroSection from '@/components/customs/sections/HeroSection'
 import ServiceSection from '@/components/customs/sections/ServiceSection'
 import React from 'react'
+import ChatBot from './Chatbot'
 
 function LandingPage() {
     return (
@@ -16,7 +17,9 @@ function LandingPage() {
         <DoctorsSection/>
         <FaqSection/>
     </div>
+        <ChatBot/>
         <FooterSection/>
+        
     </>
     )
 }

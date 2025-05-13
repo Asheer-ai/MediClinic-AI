@@ -11,7 +11,7 @@ return (
         <DoctorProvider>
         <div className='overflow-hidden h-screen bg-white'>
             <Header/>
-            <div className='flex bg-[#E9F7FF] h-[90vh]'>
+            <div className='flex bg-[#c4d8e4] h-[90vh]'>
                 <AdminSideBar/>
                 <Outlet />
             </div>

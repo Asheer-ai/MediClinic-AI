@@ -8,12 +8,17 @@ const router=express.Router();
 
 router.post('/login', adminLogin);
 router.get('/allpatients',allPatients);
+
 router.post('/addtest', addMedicalTest);
 router.get('/alltest', getAllMedicalTest);
 router.delete('/deletetest/:testId', deleteMedicalTest);
+
+
 router.post('/prescriptions', addPrescription);
+
+router.get('/prescriptions/user/:userId/doctor/:doctorId', getPrescriptionsByUserAndDoctor);
+router.get('/prescriptions/user/:userId', getPrescriptionsByUserId);
 router.get('/prescriptions', getAllPrescriptions);
-router.get('/prescriptions/:userId/:doctorId', getPrescriptionsByUserAndDoctor);
-router.get('/prescriptions/:userId', getPrescriptionsByUserId);
+
 
 export default router;

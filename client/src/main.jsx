@@ -20,6 +20,7 @@ import MedicalTestPage from './pages/MedicalTestPage'
 import Doctor from './Doctor'
 import PatientsPageDoctor from './pages/Admin/PatientsPageDoctor'
 import AppointmentDetails from './pages/AppointmentDetails'
+import PrescriptionMakePage from './pages/Admin/PrescriptionMakePage'
 
 const router=createBrowserRouter([
   {
@@ -75,7 +76,8 @@ const router=createBrowserRouter([
         path: '/doctor/patients',
         element: <PatientsPageDoctor />
       },{
-        
+        path: '/doctor/patient/:id',
+        element: <PrescriptionMakePage />
       }
     ]
   },

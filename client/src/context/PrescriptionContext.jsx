@@ -1,11 +1,12 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 // Create context
 const PrescriptionContext = createContext();
 
 // Provider component
-export const PrescriptionProvider = ({ children }) => {
+    export const PrescriptionProvider = ({ children }) => {
     const [prescriptions, setPrescriptions] = useState([]);
     const [selectedPrescription, setSelectedPrescription] = useState(null);
 
@@ -19,50 +20,51 @@ export const PrescriptionProvider = ({ children }) => {
     });
 
     // Fetch previous prescriptions of the patient
-    const fetchPrescriptions = async (userId, doctorId) => {
+        const fetchPrescriptions = async (userId, doctorId) => {
         try {
-            const response = await axios.get(`http://localhost:5014/api/admin/prescriptions/${userId}/${doctorId}`);
-            setPrescriptions(response.data);
+        const response = await axios.get(`http://localhost:5014/api/admin/prescriptions/user/${userId}/doctor/${doctorId}`);
+        setPrescriptions(response.data);
         } catch (error) {
-            console.error('Error fetching prescriptions:', error);
+        console.error('Error fetching prescriptions:', error);
         }
     };
 
     // Submit new prescription
-    const submitPrescription = async (prescriptionData) => {
+        const submitPrescription = async (data) => {
         try {
-            const response = await axios.post('http://localhost:5014/api/admin/prescriptions', prescriptionData);
-            console.log('Prescription saved:', response.data);
-            // Optionally: Fetch updated prescriptions after submission
-        } catch (error) {
-            console.error('Error saving prescription:', error);
+            
+            const res = await axios.post('http://localhost:5014/api/admin/prescriptions', data);
+            toast.success('Prescription saved!');
+            navigate(-1); // <-- move navigation here
+        } catch (err) {
+            toast.error('Error saving prescription');
+            console.error(err);
         }
-    };
+        };
 
     const handleSelectPrescription = (prescription) => {
-        setSelectedPrescription(prescription);
-        // Update formValues only if a prescription is selected
+    setSelectedPrescription(prescription);
+    // Update formValues only if a prescription is selected
         if (prescription) {
-            setFormValues({
-                ...formValues,
-                patientDetails: {
-                    name: prescription.patientDetails.name,
-                    age: prescription.patientDetails.age,
-                    vitals: {
-                        pressure: prescription.patientDetails.vitals.pressure,
-                        temperature: prescription.patientDetails.vitals.temperature,
-                        oxygenLevel: prescription.patientDetails.vitals.oxygenLevel,
-                    },
-                },
-                diseaseName: prescription.diseaseName,
-                symptoms: prescription.symptoms,
-                treatment: prescription.treatment,
-                medicine: prescription.medicine || [], // Use existing medicine if present
-                test: prescription.test || [],
-            });
+        setFormValues({
+            ...formValues,
+            patientDetails: {
+            name: prescription.patientDetails.name,
+            age: prescription.patientDetails.age,
+            vitals: {
+                pressure: prescription.patientDetails.vitals.pressure,
+                temperature: prescription.patientDetails.vitals.temperature,
+                oxygenLevel: prescription.patientDetails.vitals.oxygenLevel,
+            },
+            },
+            diseaseName: prescription.diseaseName,
+            symptoms: prescription.symptoms,
+            treatment: prescription.treatment,
+            medicine: prescription.medicine || [], // Use existing medicine if present
+            test: prescription.test || [],
+        });
         }
     };
-
     return (
         <PrescriptionContext.Provider value={{ prescriptions, selectedPrescription, handleSelectPrescription, fetchPrescriptions, formValues, setFormValues, submitPrescription, }}>
             {children}

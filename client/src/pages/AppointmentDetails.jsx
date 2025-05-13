@@ -112,13 +112,14 @@ function AppointmentDetails() {
                 onClick={handleConfirmBooking}>
                         Confirm Booking
                 </button>
-            </div>
-        </div>
-        <button
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg w-full"
-        onClick={handleConfirmBooking}>
-        Confirm Booking
-        </button>
+                    </div>
+                </div>
+                <button
+                onClick={() => navigate(-1)}
+                className='absolute bottom-5 left-5 px-6 py-2 bg-[#1B4965] text-white uppercase text-sm rounded-xl font-thin font-kameron'
+                >
+                Go Back
+            </button>
         <ToastContainer/>
     </div>
   )

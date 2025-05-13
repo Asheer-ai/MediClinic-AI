@@ -1,4 +1,5 @@
 import MedicalTestCards from '@/components/customs/MedicalTestCards';
+import MedicalTestReportCards from '@/components/customs/MedicalTestReportCards';
 import { useMedicalTests } from '@/context/MedicalTestContext'
 import React from 'react'
 
@@ -12,10 +13,10 @@ function MedicalTestPage() {
         </div>
         <div className='w-full h-[30rem] flex justify-between'>
             <div className='w-[69%] bg-white rounded-md h-full overflow-y-scroll'>
-                <MedicalTestCards/>
+                <MedicalTestCards tests={tests}/>
             </div>
             <div className='w-[29%] bg-white rounded-md h-full overflow-y-scroll'>
-                
+                <MedicalTestReportCards/>
             </div>
         </div>
     </div>

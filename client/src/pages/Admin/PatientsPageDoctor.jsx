@@ -17,6 +17,7 @@ function PatientsPageDoctor() {
                 try {
                 const response = await fetch('http://localhost:5014/api/admin/allpatients');
                 const data = await response.json();
+                console.log("patient page " ,data )
 
                 // Filter the patients that have appointments with the doctor
                 const filteredPatients = data.filter(patient => patient.doctor && patient.doctor.email === doctorData.email);
@@ -41,7 +42,7 @@ function PatientsPageDoctor() {
                 <PatientsListComponent patients={patients} filters={filters} />
             </div>
             <div className='w-[24%] h-full rounded-lg overflow-y-scroll bg-white'>
-            <PatientFilters setFilters={setFilters}/>
+                <PatientFilters setFilters={setFilters}/>
             </div>
         </div>
     </div>

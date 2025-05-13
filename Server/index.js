@@ -5,6 +5,7 @@ import connectionToDB from './config/db.js';
 import patientRoutes from './routes/patientRoute.js';
 import adminRoutes from './routes/adminRoute.js';
 import doctorRoutes from './routes/DoctorRoute.js'
+import googleAIRoutes from './routes/googleAIRoutes.js'
 
 dotenv.config()
 
@@ -27,6 +28,7 @@ app.get('/ping', (_req, res) => {
 app.use('/api/patients',patientRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/doctors', doctorRoutes);
+app.use('/api', googleAIRoutes);
 
 const PORT=process.env.PORT || 5000;
 app.listen(PORT, () => {

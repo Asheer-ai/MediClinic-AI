@@ -30,7 +30,7 @@ export const DoctorProvider=({ children }) => {
 
     const doctorRemove = async (doctorId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/doctors/delete/${doctorId}`);
+            await axios.delete(`http://localhost:5014/api/doctors/delete/${doctorId}`);
             fetchDoctors()
         } catch (error) {
             console.log('Failed to remove doctor', error);

@@ -15,7 +15,7 @@ export const addPrescription= async(req,res)=>{
     }=req.body
     try {
         const doctor=await Doctor.findById(doctorObjectId); 
-        const patient=await Patient.findById(doctorObjectId); 
+        const patient=await Patient.findById(userobjectId); 
 
         if(!doctor || !patient){
             return res.status(404).json({message:'Doctor or Patient not found'});

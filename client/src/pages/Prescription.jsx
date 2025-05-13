@@ -10,6 +10,7 @@ function Prescription() {
         const fetchPrescriptions = async () => {
             try {
                 const response = await axios.get(`http://localhost:5014/api/admin/prescriptions/${userId}`)
+                console.log("prescription ",response);
                 setPrescriptions(response.data);
             } catch (error) {
                 console.error('Error fetching prescriptions:', error);
