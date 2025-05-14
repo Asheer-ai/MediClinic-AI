@@ -3,7 +3,7 @@ import { usePrescriptionContext } from '@/context/PrescriptionContext';
 import { useNavigate } from 'react-router-dom';
 
 const PrescriptionForm = ({ userId, doctorId }) => {
-    const navigate = useNavigate()
+    
     const { formValues, setFormValues, submitPrescription } = usePrescriptionContext();
 
     // Handle form input change, including deeply nested fields

@@ -4,7 +4,7 @@ import Prescription from "../models/prescription.js";
 
 export const addPrescription= async(req,res)=>{
     const{
-        userobjectId,
+        userObjectId,
         doctorObjectId,
         patientDetails,
         diseaseName,
@@ -15,14 +15,19 @@ export const addPrescription= async(req,res)=>{
     }=req.body
     try {
         const doctor=await Doctor.findById(doctorObjectId); 
-        const patient=await Patient.findById(userobjectId); 
+        const patient=await Patient.findById(userObjectId); 
+
+        console.log(doctor);
+        console.log(patient);
+        console.log(userObjectId);
+        console.log(doctorObjectId);
 
         if(!doctor || !patient){
             return res.status(404).json({message:'Doctor or Patient not found'});
         }
 
         const prescription=new Prescription({
-            user: userobjectId,
+            user: userObjectId,
             doctor:doctorObjectId,
             patientDetails,
             diseaseName,
@@ -71,25 +76,29 @@ export const getPrescriptionsByUserAndDoctor= async(req,res)=>{
         res.status(500).json({message:error.message}); 
     }
 }
-export const getPrescriptionsByUserId= async(req,res)=>{
-    const { userId } = req.params;
-    try {
-        const patient=await Patient.findById(userId).populate('prescriptions');
-
-        if(!patient){
-            return res.status(404).json({message:'Patient not found'});
+ export const getPrescriptionsByUserId = async (req, res) => {
+      const { userId } = req.params;
+    
+      try {
+        // Find the patient by userId
+        const patient = await Patient.findById(userId).populate('prescriptions');
+    
+        if (!patient) {
+            return res.status(404).json({ message: 'Patient not found' });
         }
-
+    
+        // Populate the prescriptions with doctor details
         const prescriptions = await Promise.all(
-            patient.prescriptions.map(async (prescriptionId)=>{
-                const prescription=await Prescription.findById(prescriptionId).populate('doctor');
-                return prescription;
+            patient.prescriptions.map(async (prescriptionId) => {
+            const prescription = await Prescription.findById(prescriptionId).populate('doctor');
+            return prescription;
             })
-        )
-
+        );
+        // const prescriptions = patient.prescriptions;
+    
         res.status(200).json(prescriptions);
-    } catch (error) {
-        res.status(500).json({message:error.message});
-    }
-};
+      } catch (error) {
+        res.status(500).json({ message: error.message });
+      }
+    };
 

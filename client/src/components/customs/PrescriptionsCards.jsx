@@ -7,7 +7,7 @@ function PrescriptionsCards({prescriptions}) {
              <div key={prescription._id} className="flex items-center justify-between bg-[#F0F4F8] shadow-lg p-4 rounded-lg ">
                  {/* Cover Image */}
                 <div className="w-24 h-24">
-                    {/* <img src={prescription.doctor.image} alt="Prescription" className="w-full h-full rounded-md object-cover" /> */}
+                    <img src={prescription.doctor.image} alt="Prescription" className="w-full h-full rounded-md object-cover" />
                 </div>
                 {/* Prescription Details */}
                 <div className="flex-1 ml-4">

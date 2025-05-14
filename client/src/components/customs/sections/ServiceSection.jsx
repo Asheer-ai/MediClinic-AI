@@ -3,11 +3,11 @@ import Service from '../smallComponents/Service'
 
 function ServiceSection() {
     const services = [{text: 'dentist', url: '/dentistService.png'},
-        {text: 'dentist', url: '/dentistService.png'},
-        {text: 'dentist', url: '/dentistService.png'},
-        {text: 'dentist', url: '/dentistService.png'},
-        {text: 'dentist', url: '/dentistService.png'},
-        {text: 'dentist', url: '/dentistService.png'},
+        {text: 'Surgeon ', url: '/Surgon.png'},
+        {text: 'Cardiologist', url: '/heartimg.png'},
+        {text: 'General Physicians', url: '/General.png'},
+        {text: 'Neurologist', url: '/Neurologist (2).png'},
+        {text: 'Dermatologist', url: '/Dermatologist.png'},
       
       ]
   return (

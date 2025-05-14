@@ -1,12 +1,17 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+
+
+
 
 // Create context
 const PrescriptionContext = createContext();
 
 // Provider component
     export const PrescriptionProvider = ({ children }) => {
+        const navigate=useNavigate();
     const [prescriptions, setPrescriptions] = useState([]);
     const [selectedPrescription, setSelectedPrescription] = useState(null);
 
@@ -32,7 +37,7 @@ const PrescriptionContext = createContext();
     // Submit new prescription
         const submitPrescription = async (data) => {
         try {
-            
+
             const res = await axios.post('http://localhost:5014/api/admin/prescriptions', data);
             toast.success('Prescription saved!');
             navigate(-1); // <-- move navigation here

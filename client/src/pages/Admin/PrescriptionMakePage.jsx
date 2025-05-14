@@ -15,7 +15,7 @@ function PrescriptionMakePage() {
   return (
     <PrescriptionProvider>
         <div className='w-full px-3 h-full py-5 flex justify-between'>
-            {/* <PreviousPrescriptions userId={userId} doctorId={doctorId} /> */}
+            <PreviousPrescriptions userId={userId} doctorId={doctorId} />
             <PrescriptionForm userId={userId} doctorId={doctorId}/>
             <LivePreview/>
         </div>

@@ -13,11 +13,14 @@ router.post('/addtest', addMedicalTest);
 router.get('/alltest', getAllMedicalTest);
 router.delete('/deletetest/:testId', deleteMedicalTest);
 
+// router.post("/health",(req,res)=>{
+//     res.send("pkkk");
+// })  
 
 router.post('/prescriptions', addPrescription);
 
 router.get('/prescriptions/user/:userId/doctor/:doctorId', getPrescriptionsByUserAndDoctor);
-router.get('/prescriptions/user/:userId', getPrescriptionsByUserId);
+router.get('/prescriptions/:userId', getPrescriptionsByUserId);
 router.get('/prescriptions', getAllPrescriptions);
 
 

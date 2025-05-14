@@ -12,7 +12,7 @@ import { DoctorContext } from '@/context/DoctorContext';
 //   { id: 6, name: "Dr. Sarah Miller", speciality: "Gynecologist", image: "/face.png" },
 // ];
 
-const specialties = ["All", "Cardiologist", "Gynecologist", "Dermatologist", "Orthopedist"];
+const specialties = ["All", "Cardiologist", "Gynecologist", "Dermatologist", "Orthopedist","Surgeon","General Physicians"];
 
 function DoctorCards() {
   const { doctors } = useContext(DoctorContext);
