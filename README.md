@@ -168,7 +168,8 @@ PORT=5000
 4. Start the server:
 ```bash
 npm run dev
-
+```
+---
 
 # Clinic Management System - Frontend
 
