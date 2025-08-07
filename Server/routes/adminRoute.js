@@ -1,6 +1,6 @@
 import express from "express"
 import { adminLogin, allPatients } from "../controllers/adminController.js";
-import { addMedicalTest, deleteMedicalTest, getAllMedicalTest } from "../controllers/medicalTestController.js";
+import { addMedicalTest, deleteMedicalTest, getAllMedicalTests } from "../controllers/medicalTestController.js";
 import { addPrescription, getAllPrescriptions, getPrescriptionsByUserAndDoctor, getPrescriptionsByUserId } from "../controllers/prescriptionController.js";
 
 
@@ -10,12 +10,10 @@ router.post('/login', adminLogin);
 router.get('/allpatients',allPatients);
 
 router.post('/addtest', addMedicalTest);
-router.get('/alltest', getAllMedicalTest);
+router.get('/alltest', getAllMedicalTests);
 router.delete('/deletetest/:testId', deleteMedicalTest);
 
-// router.post("/health",(req,res)=>{
-//     res.send("pkkk");
-// })  
+
 
 router.post('/prescriptions', addPrescription);
 

@@ -1,34 +1,34 @@
 import React from 'react'
 
-const tests = [
-  {
-    id: 1,
-    testName: 'Complete Blood Count (CBC)',
-    price: '$50',
-    image: 'https://via.placeholder.com/150',
-  },
-  {
-    id: 2,
-    testName: 'Liver Function Test (LFT)',
-    price: '$80',
-    image: 'https://via.placeholder.com/150',
-  },
-  {
-    id: 3,
-    testName: 'Kidney Function Test (KFT)',
-    price: '$75',
-    image: 'https://via.placeholder.com/150',
-  },
-];
+// const tests = [
+//   {
+//     id: 1,
+//     testName: 'Complete Blood Count (CBC)',
+//     price: '$50',
+//     image: 'https://stjude.scene7.com/is/image/stjude/sickle-cell-histology?wid=500',
+//   },
+//   {
+//     id: 2,
+//     testName: 'Liver Function Test (LFT)',
+//     price: '$80',
+//     image: 'https://via.placeholder.com/150',
+//   },
+//   {
+//     id: 3,
+//     testName: 'Kidney Function Test (KFT)',
+//     price: '$75',
+//     image: 'https://via.placeholder.com/150',
+//   },
+// ];
 
-function MedicalTestCards() {
+function MedicalTestCards({tests}) {
   return (
     <div className='p-4 flex flex-col gap-4'>
         {tests.map((test)=>(
             <div key={test._id} className="flex items-center justify-between bg-[#F0F4F8] p-4 rounded-lg shadow-lg">
             {/* Cover Image */}
             <div className="w-24 h-24">
-                <img src='https://via.placeholder.com/150' alt={test.name} className="w-full h-full rounded-md object-cover" />
+                <img src='https://stjude.scene7.com/is/image/stjude/sickle-cell-histology?wid=500' alt={test.name} className="w-full h-full rounded-md object-cover" />
             </div>
             {/* Test Details */}
             <div className="flex-1 ml-4">

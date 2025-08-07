@@ -5,19 +5,19 @@ const reports = [
         id: 1,
         testName: 'Complete Blood Count (CBC)',
         date: '2024-08-10',
-        image: 'https://via.placeholder.com/100',
+        image: 'https://simiradiagnostics.com/wp-content/uploads/2025/01/CBC-Test.jpeg',
     },
     {
         id: 2,
         testName: 'Liver Function Test (LFT)',
         date: '2024-08-12',
-        image: 'https://via.placeholder.com/100',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2ZiM-Ef0ir0T0GXdiqa7OOMxbL0aZl0p_7A&s',
     },
     {
         id: 3,
         testName: 'Kidney Function Test (KFT)',
         date: '2024-08-14',
-        image: 'https://via.placeholder.com/100',
+        image: 'https://karaulidiagnostics.com/wp-content/uploads/2024/07/KFT-test-Karauli-Diagnostics-300x300.jpg',
     },
 ];
 

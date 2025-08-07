@@ -13,7 +13,7 @@ function Navbar() {
     };
 return (
     <div className='py-5 flex items-center justify-between'>
-        <img className='w-36' src="/logo.svg" alt="" />
+        <img className='w-36' src="/logo-transparent.png" alt="hi" />
         <div className='flex items-center gap-4'>
             <Btn clickHandler={handleAdminLoginClick} text={'Admin'}/>
             <Btn clickHandler={handleRegisterClick} text={'register'}/>

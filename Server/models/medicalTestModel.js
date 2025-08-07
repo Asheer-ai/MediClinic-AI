@@ -3,11 +3,15 @@ import mongoose from "mongoose";
 const medicalTestSchema = new mongoose.Schema({
     user:
     {
-        type: mongoose.Schema.Types.ObjectId, ref: "Patient", required: true
+        type: mongoose.Schema.Types.ObjectId, ref: "Patient", required: false
     },
     doctor:
     {
-        type: mongoose.Schema.Types.ObjectId, ref: "Doctor" , required:true 
+        type: mongoose.Schema.Types.ObjectId, ref: "Doctor" , required:false 
+    },
+    name: {
+    type: String,
+    required: true
     },
     description:{
         type:String,
@@ -19,7 +23,7 @@ const medicalTestSchema = new mongoose.Schema({
     },
     date:
     {
-        type:String,required:true
+        type:String,required:false
     }
 })
 

@@ -22,14 +22,14 @@ export const MedicalTestProvider = ({ children }) => {
 
     const addTest = async (newTest) => {
         try {
-            const respone=await axios.post('http://localhost:5014/api/admin/addtest',newTest);
-
-            setTests((prevTests)=>[...prevTests,respone.data]);
-            fetchTests();
+        const response = await axios.post('http://localhost:5014/api/admin/addtest', newTest);
+        
+        setTests((prevTests) => [...prevTests, response.data]);
+        fetchTests();
         } catch (error) {
-            console.log('Error adding new test:', error);
+        console.error('Error adding new test:', error);
         }
-    }
+    };
 
     const removeTest = async (testId) => {
         try {

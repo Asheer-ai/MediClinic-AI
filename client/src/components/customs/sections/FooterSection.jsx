@@ -11,7 +11,7 @@ function FooterSection() {
         <div className='text-white flex items-center py-3 gap-2'>
             <CopyrightIcon className='w-4' />
             <p className='text-sm'>all rights reserve to </p>
-            <img className='w-20' src="/logo.svg" alt="" />
+            <img className='w-20' src="/logo-transparent.png" alt="" />
         </div>
         </div>
         <div className='w-1/2 flex gap-5 justify-end'>

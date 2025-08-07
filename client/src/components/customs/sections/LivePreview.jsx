@@ -1,11 +1,33 @@
 import { usePrescriptionContext } from '@/context/PrescriptionContext'
-import React from 'react'
+import React, { useRef } from 'react';
+import html2pdf from 'html2pdf.js';
 
 function LivePreview() {
     const { formValues } = usePrescriptionContext();
+    const previewRef = useRef();
+
+    const handleDownload = () => {
+        const element = previewRef.current;
+        const opt = {
+            margin: 0.5,
+            filename: `prescription-${formValues.patientDetails?.name || 'patient'}.pdf`,
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+        };
+
+        html2pdf().set(opt).from(element).save();
+    };
+
 return (
-    <div className="w-full md:w-[45%] bg-white h-full rounded-lg shadow-lg p-6 overflow-y-auto">{/* Live Preview Title */}
+    <div ref={previewRef} className="w-full md:w-[45%] bg-white h-full rounded-lg shadow-lg p-6 overflow-y-auto">{/* Live Preview Title */}
         <h3 className="text-xl font-semibold mb-4 text-gray-800">Live Prescription Preview</h3>
+        <button 
+                    onClick={handleDownload} 
+                    className="bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600"
+                >
+                    Download PDF
+        </button>
 
         {/* Static Clinic Information */}
 

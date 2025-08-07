@@ -30,6 +30,7 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/doctors', doctorRoutes);
 app.use('/api', googleAIRoutes);
 
+
 const PORT=process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`App is running at http://localhost:${PORT}`);
