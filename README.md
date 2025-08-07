@@ -169,3 +169,80 @@ PORT=5000
 ```bash
 npm run dev
 
+
+# Clinic Management System - Frontend
+
+This is the **frontend** of the Clinic Management System (CMS) built using **React.js**, **Vite**, and **Tailwind CSS**. It serves as the user interface for patients, doctors, and administrators to interact with the system.
+
+---
+
+## 🧑‍⚕️ Features
+
+### 👨‍⚕️ Doctor Module
+- View list of assigned patients.
+- Create, edit, and view prescriptions.
+- AI-generated insights on lab reports using RAG-based system.
+- View medical tests and add test recommendations.
+
+### 🧑‍💼 Admin Module
+- Manage doctors and patients.
+- Filter patients based on conditions.
+- View appointments and medical test results.
+- Dashboard with charts and analytics.
+
+### 🧑‍💊 Patient Module
+- Register and log in securely.
+- View and download prescriptions.
+- Upload lab reports (PDF).
+- Receive AI analysis of test reports.
+
+---
+
+## 🧰 Tech Stack
+
+| Technology        | Purpose                         |
+|------------------|----------------------------------|
+| React.js         | UI Library                       |
+| Vite             | Build Tool                       |
+| Tailwind CSS     | Styling Framework                |
+| React Router DOM | Routing                          |
+| Axios            | HTTP Client                      |
+| React Toastify   | Notifications                    |
+| Chart.js         | Data Visualization               |
+| Lucide-React     | Icons                            |
+| Date-Fns         | Date utilities                   |
+| ShadCN / Radix UI| UI Components                    |
+| Context API      | State Management                 |
+
+---
+
+## 📁 Project Structure
+
+
+clinic-frontend/
+├── public/
+├── src/
+│ ├── components/
+│ ├── contexts/
+│ ├── hooks/
+│ ├── pages/
+│ │ ├── Admin/
+│ │ ├── Doctor/
+│ │ ├── Patient/
+│ ├── routes/
+│ ├── services/
+│ ├── utils/
+│ ├── App.jsx
+│ ├── main.jsx
+├── tailwind.config.js
+├── vite.config.js
+
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/clinic-management-frontend.git
+cd clinic-management-frontend
