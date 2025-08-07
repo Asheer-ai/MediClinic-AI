@@ -219,7 +219,7 @@ This is the **frontend** of the Clinic Management System (CMS) built using **Rea
 
 ## 📁 Project Structure
 
-
+```plaintext
 clinic-frontend/
 ├── public/
 ├── src/
@@ -238,7 +238,7 @@ clinic-frontend/
 ├── tailwind.config.js
 ├── vite.config.js
 
-
+```
 ---
 
 ## 🚀 Getting Started
