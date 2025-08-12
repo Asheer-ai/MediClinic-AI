@@ -241,9 +241,3 @@ clinic-frontend/
 ```
 ---
 
-## 🚀 Getting Started
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/your-username/clinic-management-frontend.git
-cd clinic-management-frontend
