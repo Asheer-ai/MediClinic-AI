@@ -22,7 +22,7 @@ function AppointmentDetails() {
         // Fetch doctor details by ID
         const fetchDoctorDetails = async () => {
             try {
-                const response = await axios.get(`http://localhost:5014/api/doctors/${doctorId}`)
+                const response = await axios.get(`https://mediclinic-ai.onrender.com/api/doctors/${doctorId}`)
                 setDoctor(response.data);
             } catch (error) {
                 console.error('Error fetching doctor details:', error);
@@ -50,7 +50,7 @@ function AppointmentDetails() {
         };
 
         try {
-            const response = await axios.post('http://localhost:5014/api/patients/addappointment',appointmentData);
+            const response = await axios.post('https://mediclinic-ai.onrender.com/api/patients/addappointment',appointmentData);
             toast.success(`Appointment confirmed for ${doctor?.name} on ${selectedDate} at ${selectedTime}`);
             navigate(-1);
         } catch (error) {

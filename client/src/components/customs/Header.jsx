@@ -9,7 +9,7 @@ function Header() {
     const handleLogout= async () => {
         localStorage.removeItem('token');
         try {
-            await axios.post('http://localhost:5014/api/patients/logout')
+            await axios.post('https://mediclinic-ai.onrender.com/api/patients/logout')
             navigate('/');
         } catch (error) {
             console.error('Error logging out', error);

@@ -12,7 +12,7 @@ export const MedicalTestProvider = ({ children }) => {
 
     const fetchTests = async () => {
         try {
-            const response=await axios.get('http://localhost:5014/api/admin/alltest')
+            const response=await axios.get('https://mediclinic-ai.onrender.com/api/admin/alltest')
             console.log(response.data);
             setTests(response.data);
         } catch (error) {
@@ -22,7 +22,7 @@ export const MedicalTestProvider = ({ children }) => {
 
     const addTest = async (newTest) => {
         try {
-        const response = await axios.post('http://localhost:5014/api/admin/addtest', newTest);
+        const response = await axios.post('https://mediclinic-ai.onrender.com/api/admin/addtest', newTest);
         
         setTests((prevTests) => [...prevTests, response.data]);
         fetchTests();
@@ -33,7 +33,7 @@ export const MedicalTestProvider = ({ children }) => {
 
     const removeTest = async (testId) => {
         try {
-            await axios.delete(`http://localhost:5014/api/admin/deletetest/${testId}`);
+            await axios.delete(`https://mediclinic-ai.onrender.com/api/admin/deletetest/${testId}`);
             setTests((prevTests)=>prevTests.filter((test) => test._id !== testId))
         } catch (error) {
             console.log('Error deleting test:', error);

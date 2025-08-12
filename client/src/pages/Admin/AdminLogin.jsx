@@ -13,7 +13,7 @@ function AdminLogin() {
     const handleAdminLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5014/api/admin/login', { email, password });
+            const response = await axios.post('https://mediclinic-ai.onrender.com/api/admin/login', { email, password });
             if(response.status === 200){
                 navigate('/admin/patients')
             }
@@ -25,7 +25,7 @@ function AdminLogin() {
     const handleDoctorLogin = async (e) => {
         e.preventDefault();
         try{
-            const response=await axios.post('http://localhost:5014/api/doctors/login', { email, code });
+            const response=await axios.post('https://mediclinic-ai.onrender.com/api/doctors/login', { email, code });
             if(response.status === 200){
                 localStorage.setItem('doctorData',JSON.stringify(response.data));
                 navigate('/doctor/patients');

@@ -33,7 +33,7 @@ const ChatBot = () => {
       const thinkingMessage = { text: 'Thinking...', from: 'bot' };
       setMessages((prev) => [...prev, thinkingMessage]);
 
-      const res = await fetch('http://localhost:5014/api/chat', {
+      const res = await fetch('https://mediclinic-ai.onrender.com/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

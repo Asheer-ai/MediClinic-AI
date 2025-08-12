@@ -22,7 +22,7 @@ function SignUpPage() {
     const handleSubmit = async(e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post('http://localhost:5014/api/patients/register',formData)
+            const { data } = await axios.post('https://mediclinic-ai.onrender.com/api/patients/register',formData)
             localStorage.setItem('userInfo',JSON.stringify(data));
             navigate('/home')
         } catch (error) {

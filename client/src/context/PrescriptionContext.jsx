@@ -27,7 +27,7 @@ const PrescriptionContext = createContext();
     // Fetch previous prescriptions of the patient
         const fetchPrescriptions = async (userId, doctorId) => {
         try {
-        const response = await axios.get(`http://localhost:5014/api/admin/prescriptions/user/${userId}/doctor/${doctorId}`);
+        const response = await axios.get(`https://mediclinic-ai.onrender.com/api/admin/prescriptions/user/${userId}/doctor/${doctorId}`);
         setPrescriptions(response.data);
         } catch (error) {
         console.error('Error fetching prescriptions:', error);
@@ -38,7 +38,7 @@ const PrescriptionContext = createContext();
         const submitPrescription = async (data) => {
         try {
 
-            const res = await axios.post('http://localhost:5014/api/admin/prescriptions', data);
+            const res = await axios.post('https://mediclinic-ai.onrender.com/api/admin/prescriptions', data);
             toast.success('Prescription saved!');
             navigate(-1); // <-- move navigation here
         } catch (err) {

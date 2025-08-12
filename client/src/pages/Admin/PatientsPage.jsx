@@ -10,7 +10,7 @@ function PatientsPage() {
     useEffect(()=>{
         const fetchPatients = async () => {
             try {
-                const response = await fetch('http://localhost:5014/api/admin/allpatients')
+                const response = await fetch('https://mediclinic-ai.onrender.com/api/admin/allpatients')
                 const data=await response.json();
                 console.log("patient data ",data)
 

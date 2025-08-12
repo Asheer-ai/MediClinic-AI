@@ -22,7 +22,7 @@ function DashboardPage() {
         const fetchUserData = async () => {
             if(patientId){
                 try {
-                    const response = await axios.get(`http://localhost:5014/api/patients/${patientId}`);
+                    const response = await axios.get(`https://mediclinic-ai.onrender.com/api/patients/${patientId}`);
                     const data = response.data;
 
                     setUserData(data.patient);

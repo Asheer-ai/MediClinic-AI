@@ -8,7 +8,7 @@ export const DoctorProvider=({ children }) => {
 
     const fetchDoctors = async () => {
         try {
-            const response = await axios.get('http://localhost:5014/api/doctors/all-doctors');
+            const response = await axios.get('https://mediclinic-ai.onrender.com/api/doctors/all-doctors');
             setDoctors(response.data)
         } catch (error) {
             console.log('Failed to fetch doctors', error);
@@ -21,7 +21,7 @@ export const DoctorProvider=({ children }) => {
 
     const addDoctor = async (doctorData) =>{
         try {
-            await axios.post('http://localhost:5014/api/doctors/add-doctor', doctorData);
+            await axios.post('https://mediclinic-ai.onrender.com/api/doctors/add-doctor', doctorData);
             fetchDoctors();
         } catch (error) {
             console.log('Failed to add doctor', error);
@@ -30,7 +30,7 @@ export const DoctorProvider=({ children }) => {
 
     const doctorRemove = async (doctorId) => {
         try {
-            await axios.delete(`http://localhost:5014/api/doctors/delete/${doctorId}`);
+            await axios.delete(`https://mediclinic-ai.onrender.com/api/doctors/delete/${doctorId}`);
             fetchDoctors()
         } catch (error) {
             console.log('Failed to remove doctor', error);
